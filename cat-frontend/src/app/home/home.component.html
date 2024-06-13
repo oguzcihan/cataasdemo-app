@@ -1,0 +1,75 @@
+<section class="text-gray-600 body-font">
+  <div
+    class="flex lg:w-2/3 sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+    <div class="relative flex-grow w-full">
+      <label for="full-tag" class="leading-7 text-sm text-gray-600">Get Cat With Tag</label>
+      <input type="text" id="full-tag" [(ngModel)]="tag"
+             class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-transparent focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+    </div>
+    <button class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
+            (click)="getCatByTag()"
+    >GETCAT
+    </button>
+  </div>
+  <div
+    class="flex lg:w-2/3 sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+    <div class="relative flex-grow w-full">
+      <label for="full-text" class="leading-7 text-sm text-gray-600">Get Cat With Text</label>
+      <input type="text" id="full-text" [(ngModel)]="text"
+             class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-transparent focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+    </div>
+    <button class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
+            (click)="getCatByText()"
+    >GETCAT
+    </button>
+  </div>
+  <div
+    class="flex lg:w-2/3  sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+    <div class="relative flex-grow w-full">
+      <label for="full-width" class="leading-7 text-sm text-gray-600">Width</label>
+      <input type="text" id="full-width" [(ngModel)]="width"
+             class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-transparent focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+    </div>
+    <div class="relative flex-grow w-full">
+      <label for="height" class="leading-7 text-sm text-gray-600">Height</label>
+      <input type="email" id="height" [(ngModel)]="height"
+             class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-transparent focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+    </div>
+    <button class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
+            (click)="getCatByDimensions()"
+    >GetCatWithSize
+    </button>
+  </div>
+  <div *ngIf="catImageUrl" class="container px-5 py-24 mx-auto flex flex-col">
+
+    <div class="lg:w-4/6 mx-auto">
+      <div class="rounded-lg overflow-hidden">
+        <div class="flex lg:w-2/3 w-full sm:flex-row flex-col sm:space-x-4 m-1">
+          <h1 class="title-font font-medium text-3xl text-gray-900">{{ title }}</h1>
+          <p-button (click)="showDialog()" label="Download"
+                    class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"/>
+        </div>
+
+        <img alt="content" class="object-cover object-center h-full w-full" [src]="catImageUrl" fill>
+        <input type="hidden" [(ngModel)]="imageArrayBuffer">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="card flex justify-content-center">
+
+  <p-dialog header="Download Image" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }" draggable="false">
+    <div class="flex align-items-center gap-3 mb-3">
+      <label for="imageName" class="font-semibold w-6rem">Image Name</label>
+      <input pInputText id="imageName" [(ngModel)]="fileName"
+             class="flex-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+             autocomplete="off"/>
+    </div>
+    <div class="flex justify-content-end gap-2">
+      <p-button label="Save" severity="secondary" (click)="downloadCatImage()"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"/>
+      <p-button label="Cancel" (click)="visible = false"
+                class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"/>
+    </div>
+  </p-dialog>
+</div>
