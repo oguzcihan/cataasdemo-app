@@ -1,0 +1,42 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 10s
+
+spring:
+  application:
+    name: cat-assignment
+
+  datasource:
+    username: 'postgres'
+    url: jdbc:postgresql://localhost:5432/cat-assigntment-cihan
+    password: 'postgres'
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cloud:
+    openfeign:
+      httpclient:
+        connection-timeout: 5000
+        ok-http:
+          read-timeout: 5000
+
+ocihan:
+  openapi:
+    dev-url: http://localhost:8080
+    prod-url: https://oguzcihan.github.io/#home
+
+cataas:
+  url: https://cataas.com/
+
+
+file:
+  storage:
+    root-dir: /cat-download
