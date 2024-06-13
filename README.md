@@ -31,7 +31,7 @@ cd cat-assignment
 ```
 2. **Docker compose up:**
 ```bash
-docker compose up
+docker compose up -d
 ```
 3. **Build the project:**
 ```bash
@@ -67,5 +67,17 @@ ng serve --port 8081
 
    http://localhost:8081/
 
+### PGAdmin and Database Login
+
+PGAdmin can be accessed at http://localhost:5050/
+
+ * Register => Server
+ * ### Connection
+ * Host name/address: postgres
+ * Port: 5432
+ * Username: postgres
+ * Password: postgres
+ * Database Name: cat-assignment-cihan
+ * Table Name: cat_images
 
 
