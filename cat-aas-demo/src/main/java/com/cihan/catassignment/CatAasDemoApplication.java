@@ -6,10 +6,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-public class CatAssignmentApplication {
+public class CatAasDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CatAssignmentApplication.class, args);
+		SpringApplication.run(CatAasDemoApplication.class, args);
 	}
 
 }
