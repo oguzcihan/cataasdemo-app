@@ -1,1 +1,1 @@
-CREATE DATABASE "cat-assigntment-cihan";
+CREATE DATABASE "cat-app-cihan";
