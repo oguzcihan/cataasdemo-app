@@ -77,7 +77,7 @@ PGAdmin can be accessed at http://localhost:5050/
  * Port: 5432
  * Username: postgres
  * Password: postgres
- * Database Name: cat-assignment-cihan
+ * Database Name: cat-app-cihan
  * Table Name: cat_images
 
 
