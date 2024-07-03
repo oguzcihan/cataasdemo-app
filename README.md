@@ -18,7 +18,7 @@ What things you need to install the software and how to install them:
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/oguzcihan/cat-app-assignment.git
+git clone https://github.com/oguzcihan/cataasdemo-app.git
 ```
 
 ### Installing For Backend
@@ -27,7 +27,7 @@ A step by step series of examples that tell you how to get a development environ
 
 1. **Move into the project directory:**
 ```bash
-cd cat-assignment
+cd cat-aas-demo
 ```
 2. **Docker compose up:**
 ```bash
