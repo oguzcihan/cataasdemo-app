@@ -1,7 +1,7 @@
-package com.cihan.catassignment.controllers;
+package com.cihan.catassignment.cat.controllers;
 
-import com.cihan.catassignment.domain.CatImage;
-import com.cihan.catassignment.services.CatService;
+import com.cihan.catassignment.cat.model.CatImage;
+import com.cihan.catassignment.cat.service.CatService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

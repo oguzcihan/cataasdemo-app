@@ -6,6 +6,7 @@ import {Button} from "primeng/button";
 import {DialogModule} from "primeng/dialog";
 import {ChipsModule} from "primeng/chips";
 import {CatService} from "../services/CatService";
+import {KeycloakService} from "../services/keycloak/keycloak.service";
 
 @Component({
   selector: 'app-home',
@@ -38,7 +39,7 @@ export class HomeComponent {
   folderName: string;
   imageArrayBuffer: ArrayBuffer;
 
-  constructor(private catService: CatService, private sanitizer: DomSanitizer) {
+  constructor(private catService: CatService, private sanitizer: DomSanitizer, private keycloakService: KeycloakService) {
 
   }
 
@@ -100,7 +101,7 @@ export class HomeComponent {
   async downloadCatImage(): Promise<void> {
     if (this.imageArrayBuffer && this.fileName) {
       this.catService.downloadCatImage(this.imageArrayBuffer, this.folderName, this.fileName).subscribe(res => {
-        if(res){
+        if (res) {
           alert(`Downloaded ${res.fileName}.jpg ${res.filePath} to downloads folder`);
           this.visible = false;
         }
@@ -122,4 +123,9 @@ export class HomeComponent {
     const imageUrl = URL.createObjectURL(blob);
     this.catImageUrl = this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }
+
+  async logout() {
+    this.keycloakService.logout()
+  }
+
 }

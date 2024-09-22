@@ -4,7 +4,7 @@ import {CommonModule} from "@angular/common";
 import {NavbarComponent} from "./core/navbar/navbar.component";
 import {FooterComponent} from "./core/footer/footer.component";
 import {HttpClientModule} from "@angular/common/http";
-import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {KeycloakService} from "./services/keycloak/keycloak.service";
 
 @Component({
   selector: 'app-root',
@@ -16,3 +16,8 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-b
 export class AppComponent {
   title = 'my-app';
 }
+
+export function kcFactory(kcService: KeycloakService) {
+  return () => kcService.init();
+}
+

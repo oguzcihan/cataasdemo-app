@@ -1,6 +1,6 @@
-package com.cihan.catassignment.repositories;
+package com.cihan.catassignment.cat.repositories;
 
-import com.cihan.catassignment.domain.CatImage;
+import com.cihan.catassignment.cat.model.CatImage;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

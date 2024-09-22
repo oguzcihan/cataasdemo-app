@@ -1,4 +1,4 @@
-package com.cihan.catassignment.domain;
+package com.cihan.catassignment.cat.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

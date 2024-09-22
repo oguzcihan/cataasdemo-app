@@ -1,9 +1,9 @@
-package com.cihan.catassignment.services;
+package com.cihan.catassignment.cat.service;
 
-import com.cihan.catassignment.domain.CatImage;
+import com.cihan.catassignment.cat.model.CatImage;
 import com.cihan.catassignment.exceptions.GenException;
 import com.cihan.catassignment.feign.CatFeignClient;
-import com.cihan.catassignment.repositories.CatImageRepository;
+import com.cihan.catassignment.cat.repositories.CatImageRepository;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
